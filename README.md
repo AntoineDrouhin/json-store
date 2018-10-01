@@ -33,8 +33,15 @@
 
 - ***`/document/:id/diff/:date/:date`*** : compute the difference between two versions of the document
     - *return : the diff with a classic user friendly traditionnal git diff format. (line start with + for addition and for deletion)
+
+![](https://ibin.co/4HeFTca66LUW.png)
+
  
 ![](https://thumbs.gfycat.com/ThoughtfulDistantIbex-size_restricted.gif)
+
+### Automated tests with tape
+
+![](https://ibin.co/4HeEkLk0HEsZ.png)
 
 ### next steps :
 - Allow to delete documents.
