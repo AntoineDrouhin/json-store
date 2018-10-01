@@ -4,28 +4,35 @@ import { HistoryItem, documentStore } from "../store"
 
 const router = Router();
 
+/**
+ * Ensure that post operation have a "document" element in their body
+ */
+router.post('*', function(req: Request, res: Response, next) {
+    if (req.body.document == undefined) {
+        res.status(400).send("No document defined");
+    }
+    next();
+})
+
 router.post('/', function(req: Request, res: Response) {
-    
-    // if (invalid) => res.send("NONONO")
-
-    const document : Object = req.body.document;
-    
+    const document : Object = req.body.document;    
     const id = documentStore.addDocument(document);
-
-    res.send(id);
-    
+    res.send(id); 
 });
 
 router.post('/:id', function(req: Request, res: Response) {
-    
-    // if invalid => res.send("NONONO")
+    if (documentStore.documents[req.params.id] == undefined) {
+        return res.status(400).send("Unknown document id");
+    }
 
-    // if valid => save
+    const document : Object = req.body.document;
+    res.send(documentStore.documents[req.params.id].addVersion(document));
     
 });
 
-// router.get('/', function(req: Request, res: Response) {    
-// });
+router.get('/', function(req: Request, res: Response) {    
+    res.send(documentStore.documents);
+});
 
 // router.get('/:id', function(req: Request, res: Response) {
 // });
