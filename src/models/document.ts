@@ -1,14 +1,10 @@
 
-interface DocumentInterface {
-    history: HistoryItem[]
-}
-
 interface HistoryItem {
     date: string,
     content: object
 }
 
-export class Document implements DocumentInterface {
+export class Document {
     history : HistoryItem[] = [];
 
     /**
