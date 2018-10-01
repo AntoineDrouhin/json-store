@@ -27,21 +27,21 @@
 - ***`/document/:id`*** : `{document: *}` : store a new version of a document
     - *return : {id: string, date: string}*
 
-![](https://thumbs.gfycat.com/WigglyEnviousFlatcoatretriever-size_restricted.gif)
+<img src="https://thumbs.gfycat.com/WigglyEnviousFlatcoatretriever-size_restricted.gif" width="600"/>
 
 ### Diff documents versions
 
 - ***`/document/:id/diff/:date/:date`*** : compute the difference between two versions of the document
     - *return : the diff with a classic user friendly traditionnal git diff format. (line start with + for addition and for deletion)
 
-![](https://ibin.co/4HeFTca66LUW.png)
-
+<img src="https://ibin.co/4HeFTca66LUW.png" width="600"/>
  
-![](https://thumbs.gfycat.com/ThoughtfulDistantIbex-size_restricted.gif)
 
+<img src="https://thumbs.gfycat.com/ThoughtfulDistantIbex-size_restricted.gif" width="600"/>
+ 
 ### Automated tests with tape
 
-![](https://ibin.co/4HeEkLk0HEsZ.png)
+<img src="https://ibin.co/4HeEkLk0HEsZ.png" width="600"/>
 
 ### next steps :
 - Allow to delete documents.
