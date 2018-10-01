@@ -5,7 +5,7 @@ interface DocumentInterface {
 
 interface HistoryItem {
     date: string,
-    version: object
+    content: object
 }
 
 export class Document implements DocumentInterface {
@@ -13,18 +13,18 @@ export class Document implements DocumentInterface {
 
     /**
      * Add a new version
-     * @param version version to add
+     * @param content The version to add
      * @param date ISO 8601 dates (server timezone) => https://en.wikipedia.org/wiki/ISO_8601
      */
-    addVersion(version: object) {
+    addVersion(content: object) {
         this.history.push(
             {
                 date: new Date().toISOString(),
-                version
+                content
             })
     }
 
     getLastVersion() {
-
+        return this.history[this.history.length - 1];
     }
 }
