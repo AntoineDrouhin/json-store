@@ -1,6 +1,6 @@
 
 import {Router, Request, Response} from "express";
-import { HistoryItem, documentStore } from "../store"
+import { documentStore } from "../models"
 
 const router = Router();
 
