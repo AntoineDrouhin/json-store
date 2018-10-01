@@ -17,7 +17,9 @@
 
 #### GET
 - ***`/document`*** : get all documents
-- ***`/document/:id`*** : get a document matching the id
+- ***`/document/:id`*** : get a document matching an id
+- ***`/document/:id/current`*** : get the last version of a document
+
 
 #### POST
 - ***`/document`*** : `{document: *}` : store a new document 
