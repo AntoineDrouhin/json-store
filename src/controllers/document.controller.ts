@@ -31,7 +31,7 @@ router.use("/:id", function(req: Request, res: Response, next) {
 router.post('/', function(req: Request, res: Response) {
     const document : Object = req.body.document;    
     const id = documentStore.addDocument(document);
-    res.send(id); 
+    res.send({id, date: documentStore.documents[id].history[0].date}); 
 });
 
 /**
@@ -39,7 +39,9 @@ router.post('/', function(req: Request, res: Response) {
  */
 router.post('/:id', function(req: Request, res: Response) {
     const document : Object = req.body.document;
-    res.send(documentStore.documents[req.params.id].addVersion(document));
+    documentStore.documents[req.params.id].addVersion(document)
+    const history = documentStore.documents[req.params.id].history
+    res.send({id: req.params.id, date: history[history.length -1].date });
     
 });
 
